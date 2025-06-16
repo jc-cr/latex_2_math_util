@@ -1,0 +1,9 @@
+services:
+  latex2math:
+    user: "${UID:-1000}:${GID:-1000}"
+    working_dir: /app
+    build:
+      context: ..
+      dockerfile: .docker/Dockerfile.py12
+    volumes:
+      - ../main.py:/app/main.py
